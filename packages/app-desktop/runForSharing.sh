@@ -35,6 +35,10 @@ if [ "$1" == "1" ]; then
 	echo 'mkbook "other"' >> "$CMD_FILE"
 	echo 'use "shared"' >> "$CMD_FILE"
 	echo 'mknote "note 1"' >> "$CMD_FILE"
+<<<<<<< HEAD
+=======
+	echo 'mknote "note 2"' >> "$CMD_FILE"
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 fi
 
 cd "$ROOT_DIR/packages/app-cli"

@@ -347,7 +347,12 @@ export default class Folder extends BaseItem {
 	public static async updateResourceShareIds() {
 		// Find all resources where share_id is different from parent note
 		// share_id. Then update share_id on all these resources. Essentially it
+<<<<<<< HEAD
 		// makes it match the resource share_id to the note share_id.
+=======
+		// makes it match the resource share_id to the note share_id. At the
+		// same time we also process the is_shared property.
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 		const rows = await this.db().selectAll(`
 			SELECT r.id, n.share_id, n.is_shared
 			FROM note_resources nr

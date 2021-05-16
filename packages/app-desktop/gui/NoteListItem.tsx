@@ -110,6 +110,10 @@ function NoteListItem(props: NoteListItemProps, ref: any) {
 
 	let listItemTitleStyle = Object.assign({}, props.style.listItemTitle);
 	listItemTitleStyle.paddingLeft = !item.is_todo ? hPadding : 4;
+<<<<<<< HEAD
+=======
+	if (item.is_shared) listItemTitleStyle.color = theme.colorWarn;
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 	if (item.is_todo && !!item.todo_completed) listItemTitleStyle = Object.assign(listItemTitleStyle, props.style.listItemTitleCompleted);
 
 	const displayTitle = Note.displayTitle(item);

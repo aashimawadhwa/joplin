@@ -104,7 +104,11 @@ export default class ShareService {
 		await Folder.updateAllShareIds();
 	}
 
+<<<<<<< HEAD
 	public async shareNote(noteId: string) {
+=======
+	public async shareNote(noteId: string): Promise<StateShare> {
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 		const note = await Note.load(noteId);
 		if (!note) throw new Error(`No such note: ${noteId}`);
 
@@ -115,6 +119,27 @@ export default class ShareService {
 		return share;
 	}
 
+<<<<<<< HEAD
+=======
+	public async unshareNote(noteId: string) {
+		const note = await Note.load(noteId);
+		if (!note) throw new Error(`No such note: ${noteId}`);
+
+		const shares = await this.refreshShares();
+		const noteShares = shares.filter(s => s.note_id === noteId);
+
+		const promises: Promise<void>[] = [];
+
+		for (const share of noteShares) {
+			promises.push(this.deleteShare(share.id));
+		}
+
+		await Promise.all(promises);
+
+		await Note.save({ id: note.id, is_shared: 0 });
+	}
+
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 	public shareUrl(share: StateShare): string {
 		return `${this.api().baseUrl()}/shares/${share.id}`;
 	}
@@ -170,13 +195,22 @@ export default class ShareService {
 		});
 	}
 
+<<<<<<< HEAD
 	public async refreshShares() {
+=======
+	public async refreshShares(): Promise<StateShare[]> {
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 		const result = await this.loadShares();
 
 		this.store.dispatch({
 			type: 'SHARE_SET',
 			shares: result.items,
 		});
+<<<<<<< HEAD
+=======
+
+		return result.items;
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 	}
 
 	public async refreshShareUsers(shareId: string) {

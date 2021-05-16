@@ -307,7 +307,11 @@ export default class Note extends BaseItem {
 			includeTimestamps: true,
 		}, options);
 
+<<<<<<< HEAD
 		const output = ['id', 'title', 'is_todo', 'todo_completed', 'todo_due', 'parent_id', 'encryption_applied', 'order', 'markup_language', 'is_conflict'];
+=======
+		const output = ['id', 'title', 'is_todo', 'todo_completed', 'todo_due', 'parent_id', 'encryption_applied', 'order', 'markup_language', 'is_conflict', 'is_shared'];
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 
 		if (options.includeTimestamps) {
 			output.push('updated_time');

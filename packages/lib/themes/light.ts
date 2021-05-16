@@ -11,7 +11,11 @@ const theme: Theme = {
 	oddBackgroundColor: '#eeeeee',
 	color: '#32373F', // For regular text
 	colorError: 'red',
+<<<<<<< HEAD
 	colorWarn: '#9A5B00',
+=======
+	colorWarn: 'rgb(228 86 0)',
+>>>>>>> f7d164be6e23650e5b58480259566ac401b748da
 	colorFaded: '#7C8B9E', // For less important text
 	colorBright: '#000000', // For important text
 	dividerColor: '#dddddd',
